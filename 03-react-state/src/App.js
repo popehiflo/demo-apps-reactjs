@@ -10,8 +10,12 @@ const usersData = [
 
 function App() {
   const [usuario, setUsuario] = useState(null);
+  const [contador, setContador] = useState(0);
   const handleOnchangeUser = (event) => {
     setUsuario(event.target.value);
+  }
+  const handleOnclickAdd = () => {
+    setContador(contador + 1);
   }
   return (
     <div className="App">
@@ -23,6 +27,13 @@ function App() {
             <option key={userItem.id} value={userItem.id}>{userItem.name}</option>
           ))}
         </select>
+      </div>
+      <div className="App-header">
+        <h2>Valor del contador es: {contador}</h2>
+        <div style={{display:'flex'}}>
+          <button onClick={handleOnclickAdd}>+</button>
+          <button onClick={() => setContador(contador - 1)}>-</button>
+        </div>
       </div>
     </div>
   );
