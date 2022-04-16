@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import Clock from './components/Clock';
 
 const usersData = [
   { id: 'pool', name: 'Pool', age: '20' },
@@ -35,6 +36,7 @@ function App() {
           <button onClick={() => setContador(contador - 1)}>-</button>
         </div>
       </div>
+      <Clock />
     </div>
   );
 }
