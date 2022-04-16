@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import Clock from './components/Clock';
 import Salary from './components/Salary';
+import SalaryObjectInput from './components/SalaryObjectInput';
 
 const usersData = [
   { id: 'pool', name: 'Pool', age: '20' },
@@ -39,6 +40,7 @@ function App() {
       </div>
       <Clock />
       <Salary />
+      <SalaryObjectInput />
     </div>
   );
 }
