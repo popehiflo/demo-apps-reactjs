@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence} from 'framer-motion';
 import MovieCard from './components/MovieCard';
 import Filter from './components/Filter';
 
@@ -22,11 +23,13 @@ function App() {
   return (
     <div className="App">
       <Filter popular={popular} setFiltered={setFiltered} activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
-      <div className='popular-movies'>
-        {filtered.map((movie) => {
-          return <MovieCard key={movie.id} movie={movie}/>
-        })}
-      </div>
+      <motion.div layout className='popular-movies'>
+        <AnimatePresence>
+          {filtered.map((movie) => {
+            return <MovieCard key={movie.id} movie={movie}/>
+          })}
+        </AnimatePresence>
+      </motion.div>
       {/* <pre>{JSON.stringify(popular, null, 2)}</pre> */}
     </div>
   );
